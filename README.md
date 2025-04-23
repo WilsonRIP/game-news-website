@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Game News Website
+
+A modern, responsive website for displaying gaming news articles built with Next.js and TypeScript.
+
+## Features
+
+- Modern, responsive design with dark mode support
+- Article listing with card-based UI
+- Category-based browsing
+- Dynamic article pages with rich content
+- TypeScript for improved type safety
+
+## Project Structure
+
+- `/src/app/data/news/`: JSON files containing article data
+- `/src/app/data/news.ts`: Utility functions for fetching and filtering news data
+- `/src/app/types/`: TypeScript interfaces for data models
+- `/src/app/page.tsx`: Homepage displaying all articles
+- `/src/app/news/[slug]/page.tsx`: Dynamic routes for individual articles
+- `/src/app/categories/page.tsx`: Page for browsing articles by category
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Extending the Website
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Adding Articles
 
-## Learn More
+To add a new article, create a new JSON file in the `/src/app/data/news/` directory with the following structure:
 
-To learn more about Next.js, take a look at the following resources:
+```json
+{
+  "slug": "unique-article-slug",
+  "title": "Article Title",
+  "author": "Author Name",
+  "date": "YYYY-MM-DD",
+  "categories": ["Category1", "Category2"],
+  "content": "Article content goes here. Can include multiple paragraphs."
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Adding Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Some potential enhancements for this project:
 
-## Deploy on Vercel
+1. Add image support for articles
+2. Implement a search function
+3. Add user authentication for comments
+4. Integrate with a CMS for easier content management
+5. Add social sharing functionality
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
